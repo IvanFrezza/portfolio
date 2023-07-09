@@ -1,0 +1,361 @@
+:root {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  --text-primary: white;
+  --text-secondary: #ececec;
+  --bg-primary: #23252E;
+  --bg-secondary: #272A34;
+  --transition-speed: 600ms;
+  --contrast-color: #89E234;
+  --secondary-color: #151226;
+  --bg-about: #1CAC8F;
+  --bg-skill: #FFC107;
+  --bg-work: #483D8B;
+  --bg-contact: #d42058;
+  --bg-home: #23252E;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 5rem;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: hidden;
+  height: 100vh;
+
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-speed);
+}
+
+
+.nav-link i {
+  font-size: 3rem;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--contrast-color);
+}
+
+.active {
+  filter: grayscale(0%) opacity(1);
+}
+
+.nav-link:active {
+  animation: slideIn 1.5s ease-in-out forwards;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+
+.fa-primary {
+  color: #89E234;
+}
+
+.fa-secondary {
+  color: #75c32c;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+
+#pages {
+  display: inline-block;
+  width: calc(200vw + 10rem);
+  height: 100%;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  float: left;
+  width: calc(100vw - 5rem);
+  height: 100%;
+  background-color: var(--bg-primary);
+}
+
+
+
+
+section {
+  max-width: 50rem;
+}
+
+
+section h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+section span {
+  font-size: 1.125rem;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+
+#home {
+  background-color: var(--bg-home);
+
+
+}
+
+#home section {
+  text-align: left;
+
+}
+
+#about {
+  background-color: var(--bg-about);
+
+}
+
+#skill {
+  background-color: var(--bg-skill);
+
+}
+
+#work {
+  background-color: var(--bg-work);
+
+}
+
+#work section {
+  display: flex;
+  flex-direction: column;
+  background-color: #d42058;
+}
+
+
+
+.trackbar {
+  height: 100%;
+}
+
+.track-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.track-item {
+  width: 100%;
+}
+
+.track-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+
+
+#work section div {
+  display: flex;
+  flex-direction: row;
+  background-color: #23252E;
+}
+
+
+#work section #description {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFC107;
+}
+
+
+#work section #role {
+  background-color: #1CAC8F;
+}
+
+#work section #tech {
+  background-color: blue;
+}
+
+
+#contact {
+  background-color: var(--bg-contact);
+
+}
+
+
+.fadein {
+  animation: 1s ease 0s normal forwards 1 fadeinanimation;
+}
+
+@keyframes fadeinanimation {
+  from {
+    transform: translate(100%);
+    filter: blur(4px);
+
+  }
+
+  to {
+    transform: translate(0);
+    filter: blur(0);
+
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.show {
+  visibility: visible;
+  display: flex;
+}
+
+
+.fadeout {
+  animation: 1s ease 0s normal backwards 1 fadeoutanimation;
+  position: absolute;
+  left: calc(100% + 5rem);
+}
+
+
+@keyframes fadeoutanimation {
+  from {
+    transform: translate(-100%);
+    filter: blur(0);
+
+  }
+
+  to {
+    transform: translate(5rem);
+    filter: blur(4px);
+  }
+}
+
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+}

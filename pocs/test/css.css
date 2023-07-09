@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* overflow: hidden; */
+}
+
+
+
+
+nav {
+  width: 5%;
+  height: 100vh;
+  background-color: rgb(22, 22, 22);
+  float: left;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(44, 44, 44);
+}
+
+.frame {
+  float: left;
+  width: 95%;
+  height: 100vh;
+  color: white;
+}
+
+#home {
+  background-color: blue;
+}
+
+#about {
+  background-color: red;
+
+}
+
+#tech {
+  background-color: green;
+
+}
+
+
+
+
+
+.fadein {
+
+  animation: 1s ease 0s normal forwards 1 cssAnimation;
+
+}
+
+@keyframes cssAnimation {
+  from {
+    transform: translate(100%);
+    filter: blur(4px);
+
+  }
+
+  to {
+    transform: translate(0);
+    filter: blur(0);
+
+  }
+}
+
+
+.hidden {
+  animation: 1s ease 0s normal backwards 1 fade;
+  position: absolute;
+  left: 100vw;
+}
+
+
+@keyframes fade {
+  from {
+    transform: translate(-100%);
+    filter: blur(0);
+
+  }
+
+  to {
+    transform: translate(0);
+    filter: blur(4px);
+  }
+}
