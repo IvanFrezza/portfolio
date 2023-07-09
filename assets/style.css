@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-primary: white;
+    --text-secondary: #ececec;
+    --bg-home: #23252E;
+    --bg-about: #1CAC8F;
+    --bg-skill: #FFC107;
+    --bg-job: #483D8B;
+    --bg-contact: #d42058;
+    --bg-primary: #23252E;
+    --bg-secondary: #272A34;
+    --contrast-color: #89E234;
+    --transition-speed: 600ms;
+
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--contrast-color);
+}
+
+.container {
+    background-color: var(--bg-secondary);
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+nav a {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    transition: var(--transition-speed);
+}
+
+
+nav a:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--contrast-color);
+}
+
+.active {
+    filter: grayscale(0%) opacity(1);
+}
+
+
+nav a span {
+    display: none;
+    margin-left: 1rem;
+}
+
+
+section {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+    padding: 1.4rem 0;
+}
+
+section h2 {
+    padding: 1.4rem 0;
+}
+
+section p {
+    line-height: 2.2rem;
+}
+
+/* Styles applied on trigger */
+section:target {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+section:target h1,
+p,
+span {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+#home {
+    background: var(--bg-home);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+article {
+    max-width: 50rem;
+    text-align: left;
+
+}
+
+#about {
+    background: var(--bg-about);
+}
+
+#skill {
+    background: var(--bg-skill);
+}
+
+#job {
+    background: var(--bg-job);
+}
+
+#contact {
+    background: var(--bg-contact);
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    nav {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        flex-direction: row;
+    }
+
+    nav a {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
