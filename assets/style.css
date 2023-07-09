@@ -146,6 +146,14 @@ article {
     background: var(--bg-about);
 }
 
+
+#about img {
+    width: 2rem;
+    height: auto;
+    color: var(--text-primary);
+}
+
+
 #skill {
     background: var(--bg-skill);
 }
