@@ -122,9 +122,7 @@ section:target {
     z-index: 10;
 }
 
-section:target h1,
-p,
-span {
+section:target * {
     opacity: 0;
     animation: 2s fadeIn forwards .5s;
 }
@@ -158,6 +156,17 @@ article {
 
 #contact {
     background: var(--bg-contact);
+}
+
+#contact img {
+    width: 2rem;
+    height: auto;
+}
+
+#contact a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--contrast-color)
 }
 
 @keyframes fadeIn {
