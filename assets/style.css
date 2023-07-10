@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb {
     min-height: 100vh;
 }
 
-nav {
+#menu {
     position: fixed;
     left: 0;
     z-index: 50;
@@ -57,7 +57,7 @@ nav {
     background-color: var(--bg-primary);
 }
 
-nav a {
+#menu a {
     font-size: 40px;
     color: #fff;
     text-decoration: none;
@@ -67,7 +67,7 @@ nav a {
 }
 
 
-nav a:hover {
+#menu a:hover {
     filter: grayscale(0%) opacity(1);
     background: var(--bg-secondary);
     color: var(--contrast-color);
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 
-nav a span {
+#menu a span {
     display: none;
     margin-left: 1rem;
 }
@@ -124,7 +124,7 @@ section:target {
 
 section:target * {
     opacity: 0;
-    animation: 2s fadeIn forwards .5s;
+    animation: 1s fadeIn forwards .5s;
 }
 
 #home {
@@ -137,7 +137,7 @@ section:target * {
 
 
 article {
-    max-width: 50rem;
+    max-width: 64rem;
     text-align: left;
 
 }
@@ -161,6 +161,168 @@ article {
 #job {
     background: var(--bg-job);
 }
+
+#job section {
+    display: flex;
+    flex-direction: column;
+  }
+
+#job div {
+    display: flex;
+    flex-direction: row;
+}
+
+  
+#job #description {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#job #role {
+    display: flex;
+    flex-direction: column;
+}
+
+#job #role h2, #job #tech h2 {
+    text-align: left;
+    margin-top: 1.4rem;
+    padding: 0 1.4rem;
+}
+
+  
+#job #tech {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+#tech nav {
+    width: 100%;
+    overflow: auto;
+}
+
+#tech nav ul {
+    list-style: none;
+    text-align: left;
+}
+
+#tech nav ul li {
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%; /* Four links of equal widths */
+    
+}
+
+#tech nav ul li:hover {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#tech nav ul li.active {
+    background-color: #04AA6D;
+}
+
+
+#tech nav ul li:before {
+    content: 'arrow_forward_ios';
+    font-family: 'Material Icons';
+    color: var(--contrast-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+#jobmenu ul{
+    padding-left: 50px;
+    position: relative;
+    list-style: none;
+    min-width: 15rem;
+}
+
+
+#jobmenu ul::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: calc(100% - 58px);
+    left: 40px;
+    top: 0;
+    background-color: var(--text-primary);
+    z-index: -1;
+    margin-top: 29px;
+}
+
+#jobmenu ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    padding-left: 20px;
+}
+
+#jobmenu ul li span {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+#jobmenu ul li a {
+    text-decoration: none;
+    position: relative;
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    line-height: 1rem;
+    font-weight: 500;
+}
+
+#jobmenu ul li a::before{
+    content: "";
+    position: absolute;
+    background-color: var(--bg-job);
+    width: 18px;
+    height: 18px;
+    left: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50px;  
+    border: 4px solid var(--text-primary);  
+    transition: background 250ms;
+}
+
+#jobmenu ul li a.activejob {
+    font-weight: 700;
+}
+
+#jobmenu ul li a.activejob::before {
+    background-color: var(--contrast-color);
+}
+
+
+#role nav {
+    padding: 20px;
+    
+}
+
+#role nav ul {
+    list-style: none;
+}
+
+#role nav ul li {
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+#role nav ul li:before {
+        content: 'arrow_forward_ios';
+        font-family: 'Material Icons';
+        color: var(--contrast-color);
+        font-size: 1.4rem;
+        font-weight: 700;
+        top: 50%;
+}
+
 
 #contact {
     background: var(--bg-contact);
@@ -186,14 +348,14 @@ article {
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-    nav {
+    #menu  {
         bottom: 0;
         width: 100vw;
         height: 5rem;
         flex-direction: row;
     }
 
-    nav a {
+    #menu  a {
         justify-content: center;
     }
 
