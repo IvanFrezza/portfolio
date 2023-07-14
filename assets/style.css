@@ -9,7 +9,7 @@
     --text-secondary: #ececec;
     --bg-home: #23252E;
     --bg-about: #1CAC8F;
-    --bg-skill: #FFC107;
+    --bg-skill: #FF6347;
     --bg-job: #483D8B;
     --bg-contact: #d42058;
     --bg-primary: #23252E;
@@ -179,55 +179,76 @@ article {
 }
 
 
-#job #role {
+#description #role {
     display: flex;
     flex-direction: column;
 }
 
-#job #role h2, #job #tech h2 {
+
+#description #role ul {
+    list-style: none;
+    padding: 20px; 
+}
+
+#description #role ul li {
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+#description #role ul li:before {
+    content: 'arrow_forward_ios';
+    font-family: 'Material Icons';
+    color: var(--contrast-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    top: 50%;
+}
+
+#description #role h2, #description #tech h2 {
     text-align: left;
     margin-top: 1.4rem;
     padding: 0 1.4rem;
 }
 
   
-#job #tech {
+#description #tech {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
 
 
-#tech nav {
+#description #tech {
     width: 100%;
-    overflow: auto;
+    
 }
 
-#tech nav ul {
+#description #tech ul {
     list-style: none;
     text-align: left;
+    padding: 20px;
 }
 
-#tech nav ul li {
+#description #tech ul li {
     float: left;
-    padding: 12px;
+    padding: 12px 0;
     text-decoration: none;
     font-size: 17px;
     width: 25%; /* Four links of equal widths */
     
 }
 
-#tech nav ul li:hover {
+#description #tech ul li:hover {
     font-weight: 700;
     cursor: pointer;
 }
 
-#tech nav ul li.active {
-    background-color: #04AA6D;
+#description #tech ul li.active {
+    background-color: var(--contrast-color);
 }
 
 
-#tech nav ul li:before {
+#description #tech ul li:before {
     content: 'arrow_forward_ios';
     font-family: 'Material Icons';
     color: var(--contrast-color);
@@ -300,28 +321,6 @@ article {
 }
 
 
-#role nav {
-    padding: 20px;
-    
-}
-
-#role nav ul {
-    list-style: none;
-}
-
-#role nav ul li {
-    line-height: 2rem;
-    margin-bottom: 1rem;
-}
-
-#role nav ul li:before {
-        content: 'arrow_forward_ios';
-        font-family: 'Material Icons';
-        color: var(--contrast-color);
-        font-size: 1.4rem;
-        font-weight: 700;
-        top: 50%;
-}
 
 
 #contact {
