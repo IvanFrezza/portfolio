@@ -27,6 +27,9 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
 body::-webkit-scrollbar {
@@ -41,10 +44,11 @@ body::-webkit-scrollbar-thumb {
     background: var(--contrast-color);
 }
 
-.container {
+main {
     background-color: var(--bg-secondary);
     min-height: 100vh;
 }
+
 
 #menu {
     position: fixed;
@@ -84,7 +88,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-section {
+
+article {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -92,11 +97,17 @@ section {
     opacity: 0;
     transition: all ease-in .5s;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-section h1 {
+article > * {
+    max-width: 64rem;
+    text-align: left;
+    margin-left: 100px;
+}
+
+article h1 {
     color: #fff;
     font-size: 50px;
     text-transform: uppercase;
@@ -104,16 +115,16 @@ section h1 {
     padding: 1.4rem 0;
 }
 
-section h2 {
+article h2 {
     padding: 1.4rem 0;
 }
 
-section p {
+article p {
     line-height: 2.2rem;
 }
 
 /* Styles applied on trigger */
-section:target {
+article:target {
     opacity: 1;
     position: absolute;
     left: 0;
@@ -122,25 +133,24 @@ section:target {
     z-index: 10;
 }
 
-section:target * {
+article:target * {
     opacity: 0;
     animation: 1s fadeIn forwards .5s;
 }
 
-#home {
-    background: var(--bg-home);
+
+#home, #about, #skill, #job, #contact {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-
-article {
-    max-width: 64rem;
-    text-align: left;
-
+#home {
+    background: var(--bg-home);
 }
+
+
 
 #about {
     background: var(--bg-about);
@@ -153,23 +163,83 @@ article {
     color: var(--text-primary);
 }
 
+#about p {
+    text-align: center;
+}
+
 
 #skill {
     background: var(--bg-skill);
 }
 
-#job {
-    background: var(--bg-job);
+
+#skill-list {
+    display: flex;
+    flex-wrap: wrap; 
+     
 }
 
-#job section {
+.container section {
     display: flex;
     flex-direction: column;
-  }
+}
 
-#job div {
+ div {
     display: flex;
     flex-direction: row;
+}
+
+
+ div .progress{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+    padding-right: 30px;
+}
+
+ div .progress .circular-progress{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #ececec;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+ div .progress .p45{
+    background: conic-gradient(#89E234 calc(45 * 3.6deg), #ededed 0deg);
+}
+
+
+ div .progress .circular-progress::before{
+	content: "";
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	background-color: #FF6347;
+	border-radius: 50%;
+}
+
+ div .progress .progress-value {
+	position: relative;
+	font-size: 20px;
+	color: #89E234;
+    font-weight: 500;
+}
+
+ div .progress .text {
+	padding: 1rem 0 ;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #ececec;
+}
+
+
+#job {
+    background: var(--bg-job);
 }
 
   
@@ -337,6 +407,7 @@ article {
     font-weight: bold;
     color: var(--contrast-color)
 }
+
 
 @keyframes fadeIn {
     100% {
